@@ -1,14 +1,14 @@
-import React, { Fragment } from 'react';
+import React, { Fragment } from 'react'
 
-import classes from './Layout.module.css';
+import classes from './Layout.module.css'
 
-const layout = (props) => (
-    <Fragment>
-        <div>[Toolbar, Side Drawer, Backdrop]</div>
-        <main className={classes.Content}>
-            {props.children}
-        </main>
-    </Fragment>
-);
-
-export default layout;
+export default function Layout(props) {
+    return (
+        <Fragment>
+            <div>[Toolbar, Side Drawer, Backdrop]</div>
+            <main className={classes.Content}>
+                {props.children}
+            </main>
+        </Fragment>
+    )
+}
