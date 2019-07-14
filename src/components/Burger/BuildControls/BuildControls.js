@@ -13,7 +13,8 @@ const controls = [
 export default function BuildControls(props) {
     return (
         <div className={classes.BuildControls}>
-            <p>Current Price: <strong>{props.price.toFixed(2)}</strong></p>
+            <p>Current Price: <strong>{props.price.toFixed(2)}</strong></p> 
+            {/* toFixed(2) means round to 2 decimal places */}
             {controls.map(ctrl => (
                 <BuildControl 
                     key={ctrl.label} 
