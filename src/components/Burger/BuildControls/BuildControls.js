@@ -17,7 +17,9 @@ export default function BuildControls(props) {
                 <BuildControl 
                     key={ctrl.label} 
                     ingredientLabel={ctrl.label} 
-                    added={() => props.ingredientAdded(ctrl.type)}/>
+                    added={() => props.ingredientAdded(ctrl.type)}
+                    removed={() => props.ingredientRemoved(ctrl.type)}
+                    isDisabled={props.disabled[ctrl.type]}    />
             ))}
         </div>
     )
