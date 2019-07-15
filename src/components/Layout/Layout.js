@@ -9,21 +9,17 @@ export default class Layout extends Component {
         shouldShowSideDrawer: false
     }
 
-    openSideDrawer = () => {
-        this.setState({ shouldShowSideDrawer: true });
-    }
-
-    closeSideDrawer = () => {
-        this.setState({ shouldShowSideDrawer: false });
+    toggleSideDrawer = () => {
+        this.setState({ shouldShowSideDrawer: !this.state.shouldShowSideDrawer });
     }
     render () {
         return(
             <Fragment>
                 <Toolbar 
-                    showSideDrawer={this.openSideDrawer}/>
+                    showSideDrawer={this.toggleSideDrawer}/>
                 <SideDrawer 
                     shouldShow={this.state.shouldShowSideDrawer}
-                    close={this.closeSideDrawer} />
+                    close={this.toggleSideDrawer} />
                 <main className={classes.Content}>
                     {this.props.children}
                 </main>
