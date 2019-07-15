@@ -77,6 +77,16 @@ class BurgerBuilder extends Component {
         this.setState({ purchasing: true });
     }
 
+// The following won't work:
+    // purchaseHandler () {
+    //     this.setState({ purchasing: true });
+    // }
+// Without the arrow function, the 'this' means something else.
+
+    cancelPurchase = () => {
+        this.setState({ purchasing: false });
+    }
+
     render () {
         const disabledInfo = {
             ...this.state.ingredients
@@ -86,7 +96,9 @@ class BurgerBuilder extends Component {
         }
         return (
             <Fragment>
-                <Modal show={this.state.purchasing}>
+                <Modal 
+                    show={this.state.purchasing}
+                    modalClosed={this.cancelPurchase}>
                     <OrderSummary ingredients={this.state.ingredients} />
                 </Modal>
                 <Burger ingredients={this.state.ingredients} />
