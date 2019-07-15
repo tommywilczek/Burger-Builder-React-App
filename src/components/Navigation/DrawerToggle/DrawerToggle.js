@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MenuButton = (props) => {
+const DrawerToggle = (props) => {
     return (
         <div>
             <p onClick={props.shouldShow}>MENU</p>
@@ -8,4 +8,4 @@ const MenuButton = (props) => {
     )
 }
 
-export default MenuButton
+export default DrawerToggle
