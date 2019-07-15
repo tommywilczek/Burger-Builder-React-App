@@ -8,7 +8,7 @@ export default function Modal(props) {
         <Fragment>
             <Backdrop 
                 shouldShow={props.show} 
-                clicked={props.modalClosed}    
+                clicked={props.close}    
             />
             <div 
                 className={classes.Modal}
