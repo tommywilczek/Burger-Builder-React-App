@@ -4,7 +4,6 @@ import classes from './Burger.module.css'
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient'
 
 export default function Burger(props) {
-    console.log('props.ingredients', props.ingredients);
     let ingredientsArray = Object.keys(props.ingredients) // since props.ingredients is a JS object, not an array, we need to turn it into an array so we can loop through it with map()
         .map(igKey => {
             return [...Array( props.ingredients[igKey] )] // creates a new array for the number of each type of ingredient (the 'key' that is created)
@@ -19,7 +18,6 @@ export default function Burger(props) {
     if (ingredientsArray.length === 0) {
         ingredientsArray = <p>Please start adding ingredients!</p>
     }
-    console.log('ingredientsArray', ingredientsArray);
     return (
         <div className={classes.Burger}>
             <BurgerIngredient type="bread-top" />
