@@ -9,8 +9,16 @@ export default class Layout extends Component {
         shouldShowSideDrawer: false
     }
 
+    // This is not the right way! By setting state like this, your current state might
+    //  be ahead of the state this funciton is looking at.
+    // toggleSideDrawer = () => {
+    //     this.setState({ shouldShowSideDrawer: !this.state.shouldShowSideDrawer });
+    // }
+//  And this is the CLEAN way of setting the state when it depends on the old state:
     toggleSideDrawer = () => {
-        this.setState({ shouldShowSideDrawer: !this.state.shouldShowSideDrawer });
+        this.setState( ( prevState ) => {
+            return { shouldShowSideDrawer: !prevState.shouldShowSideDrawer };
+        } );
     }
     render () {
         return(

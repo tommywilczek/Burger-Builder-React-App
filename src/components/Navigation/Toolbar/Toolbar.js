@@ -8,7 +8,7 @@ import DrawerToggle from '../DrawerToggle/DrawerToggle'
 export default function Toolbar(props) {
     return (
         <header className={classes.Toolbar}>
-            <DrawerToggle shouldShow={props.showSideDrawer}/>
+            <DrawerToggle show={props.showSideDrawer}/>
             <div className={classes.Logo}>
                 <Logo />
             </div>
