@@ -12,7 +12,7 @@ export default function Toolbar(props) {
             <div className={classes.Logo}>
                 <Logo />
             </div>
-            <nav>
+            <nav className={classes.NavigationItems}>
                 <NavigationItems />
             </nav>
         </header>

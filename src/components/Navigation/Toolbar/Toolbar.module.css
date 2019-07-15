@@ -25,4 +25,7 @@
     .DesktopOnly {
         display: none;
     }
+    .NavigationItems {
+        display: none;
+    }
 }
