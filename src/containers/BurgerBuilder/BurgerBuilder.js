@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import axios from '../../axios-orders';
 
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls'
@@ -88,7 +89,29 @@ class BurgerBuilder extends Component {
     }
 
     continueWithPurchase = () => {
-        alert('You continue!');
+        // alert('You continue!');
+        const order = {
+            ingredients: this.state.ingredients,
+            price: this.state.totalPrice,
+            customer: {
+                name: 'Tom Wil',
+                address: {
+                    street: '123 See Sharp Dr.',
+                    zipcode: '99999',
+                    country: 'Indonesia'
+                },
+                email: 'test@test.com'
+            },
+            deliveryMethod: 'fastest'
+        }
+        axios.post('/orders.json', order) // Firebase requires the '.json' to be added to any endpoint
+            .then(response => {
+                console.log('response', response)
+            })
+            .catch((error) => {
+                console.log('error', error);
+            }
+            );
     }
     
 
